@@ -12,7 +12,8 @@ class ProductsController {
     create(request: Request, response: Response) {
 
         const bodySchema = z.object({
-            name: z.string()
+            name: z
+            .string()
             .trim()
             .min(6, "Minimo 6 caracteres!")
             .max(100),
